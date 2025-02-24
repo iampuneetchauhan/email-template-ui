@@ -11,7 +11,7 @@ const App = ()=>{
   return (
     <>
     <BrowserRouter>
-    <Header></Header>
+    <Header/>
     <Layout>
         <AppSidebar />
         <AppRoutes />
