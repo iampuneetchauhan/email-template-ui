@@ -5,9 +5,16 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarHeader,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 export function AppSidebar() {
+  const {isMobile,setOpenMobile} = useSidebar();
+
+  const handleSidebarCloseInMobile = () =>{
+    if(isMobile) setOpenMobile(false);
+  }
+  
   return (
     <Sidebar className="fixed top-10 left-0 h-[calc(100vh-40px)] w-64 bg-red-600">
       <SidebarHeader>
@@ -15,18 +22,18 @@ export function AppSidebar() {
         My App
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup>
+        <SidebarGroup onClick={handleSidebarCloseInMobile}>
           <Link
-            to="/templates"
-            className="block px-4 py-2 text-white hover:bg-red-500 transition-colors"
+            to="/"
+            className="block px-4 py-2 hover:bg-red-500 transition-colors"
           >
             Templates
           </Link>
         </SidebarGroup>
-        <SidebarGroup>
+        <SidebarGroup onClick={handleSidebarCloseInMobile}>
           <Link
             to="/history"
-            className="block px-4 py-2 text-white hover:bg-red-500 transition-colors"
+            className="block px-4 py-2 hover:bg-red-500 transition-colors"
           >
             History
           </Link>

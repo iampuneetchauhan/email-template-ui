@@ -5,8 +5,8 @@ const AppRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Template></Template>}></Route>
-        <Route path='History' element={<History></History>}></Route>
+        <Route path='/' element={<Template/>}></Route>
+        <Route path='History' element={<History />}></Route>
       </Routes>
     </div>
   )
